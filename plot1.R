@@ -17,7 +17,7 @@ fileURL <- "https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_powe
 download.file(fileURL, "./household.zip" )
 unzip("./household.zip")
 
-household <- read.table("household_power_consumption.txt", sep = ";", header = TRUE, stringsAsFactors = FALSE)
+household <- read.table("household_power_consumption.txt", sep = ";", header = TRUE, stringsAsFactors = FALSE, na.strings = "?")
 household <- tbl_df(household)
 
 ## Converting to correct data types
